@@ -1,0 +1,42 @@
+- compile:
+rustc <FILE_NAME>
+
+- run
+./<FILE_NAME>
+
+- create cargo project:
+cargo new <PROJECT_NAME> --bin
+
+- building cargo broject
+cargo build
+
+- run cargo build
+./target/debug/<PROJECT_NAME>
+
+- build and run
+cargo run
+
+- check build but no exe
+cargo check
+
+- building for release
+cargo build --release
+
+- update crates:
+cargo update
+
+- docs
+cargo doc --open
+
+----------------------------------------------------------------------------------
+Programing:
+-Variables:
+let x = 1; // create immutable variable
+let mut x = 1; // create mutable variable
+
+// :: <- new is an associated function on String
+// associated functions are implemented on type not instance. AKA static method
+let mut x = String::new();
+
+// & - references are immutable by default, so must pass &mut
+io::stdin().read_line(&mut guess)
