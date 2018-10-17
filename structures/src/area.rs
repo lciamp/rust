@@ -38,7 +38,7 @@ fn main() {
     println!("my_r can hold my_r3: {}", my_r.can_hold(&my_r3));
 
     let my_square = Rectangle::square(20);
-    println!("my square: {}", my_square.area());
+    printlxn!("my square: {}", my_square.area());
 
     println!("fn area_r: {}", area_r(&my_r));
 
