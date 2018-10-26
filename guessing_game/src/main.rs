@@ -5,6 +5,26 @@ use std::cmp::Ordering;
 // adds Rng trait for methods
 use rand::Rng;
 
+pub struct Guess {
+    value: u32,
+}
+
+impl Guess {
+    pub fn new(value: u32) -> Guess {
+        if value < 1 || value > 100 {
+            panic!("Guess value must be between 1 and 100, got: {}", value);
+        }
+        Guess {
+            value
+        }
+    }
+
+    pub fn value(&self) -> u32 {
+        self.value
+    }
+}
+
+
 fn main() {
     println!("Guess the number!");
 
@@ -22,12 +42,17 @@ fn main() {
             .expect("Failed to read line.");
 
         // convert guess string to int
-        let guess: u32 = match guess.trim().parse() {
+        let guess: i32 = match guess.trim().parse() {
             Ok(num) => num,
             Err(_) => continue,
         };
 
-        println!("You guessed: {}", guess);
+        if guess < 1 || guess > 100 {
+            println!("The secret number is between 1 and 100.");
+            continue;
+        }
+
+        println!("You guesses: {}", guess);
 
         match guess.cmp(&secret_number) {
             Ordering::Less => println!("Too small!"),

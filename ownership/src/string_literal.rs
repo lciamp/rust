@@ -26,6 +26,7 @@ fn main() {
     println!("{:?}", slice);
 
 
+
 }
 
 fn first_word(s: &str) -> &str {
