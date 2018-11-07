@@ -19,7 +19,9 @@ fn main() {
     let x: &'static str = "hello";
     let novel = String::from("Call me Ishmael. Some years ago...");
 
-    let first_sentence = novel.split('.').next().expect("Could not find '.'");
+    let first_sentence = novel.split('.')
+        .next()
+        .expect("Could not find '.'");
 
     let i = ImportantExcerpt {
         part: first_sentence,
