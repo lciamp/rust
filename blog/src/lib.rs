@@ -44,7 +44,7 @@ trait State {
     fn content<'a>(&self, post: &'a Post) -> &'a str {
         ""
     }
-    fn status(&self) -> String{
+    fn status(&self) -> String {
         String::from("")
     }
 }
